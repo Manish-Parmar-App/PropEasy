@@ -4,14 +4,17 @@
     "slug": "PropEasy",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/propeasy.png",
+    "icon": "./assets/images/propeasy-icon.png",
     "scheme": "propeasy",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.propeasy",
+      "appleTeamId": "MFMNLRV564"
     },
     "android": {
+      "package": "com.propeasy",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -19,7 +22,11 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
       "output": "static",
@@ -27,6 +34,12 @@
     },
     "plugins": [
       "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow PropEasy to access your location to tag property coordinates."
+        }
+      ],
       [
         "expo-splash-screen",
         {
